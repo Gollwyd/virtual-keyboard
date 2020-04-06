@@ -1,4 +1,6 @@
 
+let lang = "eng";
+localStorage.getItem(lang);
 const kyElement = document.createElement("div");
 document.body.appendChild(kyElement);
 kyElement.innerHTML = `<textarea class="use-keyboard-input" style="width: 100%; height: 100px;"></textarea>`;
@@ -350,9 +352,9 @@ const Keyboard = {
     properties: {
         value: "",
         capsLock: false,
-        lang: "eng"
+        lang: lang
     },
-
+    
   
 
     init() {
@@ -732,6 +734,7 @@ function alt(shift) {
             Keyboard.properties.lang = "ru";
             
         }else{Keyboard.properties.lang = "eng";}
+        localStorage.setItem(lang, "ru");
         document.querySelector('.keyboard').remove();
         Keyboard.init();
     }
