@@ -1,3 +1,4 @@
+
 const kyElement = document.createElement("div");
 document.body.appendChild(kyElement);
 kyElement.innerHTML = `<textarea class="use-keyboard-input" style="width: 100%; height: 100px;"></textarea>`;
@@ -399,6 +400,14 @@ const Keyboard = {
             keyElement.classList.add("key_"+key);
             
             switch (key) {
+                case "38":
+                    keyElement.classList.add("keyboard__key--wide");
+                    keyElement.textContent = "Up"
+                    break;
+                 case "40":
+                    keyElement.classList.add("keyboard__key--wide");
+                    keyElement.textContent = "Down"
+                    break;
                 case "9":
                     keyElement.classList.add("keyboard__key--wide");
                     keyElement.textContent = "Tab"
@@ -411,6 +420,14 @@ const Keyboard = {
                     keyElement.classList.add("keyboard__key--wide");
                     keyElement.textContent = "Alt"
                     break;
+                    case "17":
+                        keyElement.classList.add("keyboard__key--wide");
+                        keyElement.textContent = "Ctrl"
+                        break;
+                case "91":
+                        keyElement.classList.add("keyboard__key--wide");
+                        keyElement.textContent = "Win"
+                        break;
                 case "1666":
                     keyElement.classList.add("keyboard__key--wide");
                     keyElement.textContent = "Shift"
@@ -573,9 +590,22 @@ addEventListener("keydown", (e)=>{
         case '18': 
             alt(e.shiftKey);
         break;
+        case '17': 
+            ;
+        break;
         case '16': 
+            alt(e.altKey);
+            break;
+        case '38': 
             
             break;
+        case '40': 
+            
+            break;
+        case '91': 
+            
+            break;          
+        
         case '46': 
             del();
             break;
@@ -704,7 +734,6 @@ function alt(shift) {
         }else{Keyboard.properties.lang = "eng";}
         document.querySelector('.keyboard').remove();
         Keyboard.init();
-
-
     }
 }
+
