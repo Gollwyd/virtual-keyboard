@@ -3,8 +3,8 @@ let lang = "eng";
 localStorage.getItem(lang);
 const kyElement = document.createElement("div");
 document.body.appendChild(kyElement);
-kyElement.innerHTML = `<textarea class="use-keyboard-input" style="width: 100%; height: 100px;"></textarea>`;
-//document.body.appendChild(`<textarea class="use-keyboard-input" style="width: 100%; height: 100px;"></textarea>`);
+kyElement.innerHTML = `<textarea class="use-keyboard-input" style="width: 100%; height: 100px;" placeholder="Клавиатура писалась для Windows, смена раскладки Shift+Alt "></textarea>`;
+
 const Keyboard = {
     lab(key) {
         switch (key) {
